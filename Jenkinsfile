@@ -18,14 +18,9 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                // Add deployment steps if necessary
+                // Deploy the built artifact to the deployment environment
+                sh 'mvn deploy'
             }
-        }
-    }
-
-    post {
-        success {
-            // Add post-build actions if necessary
         }
     }
 }
